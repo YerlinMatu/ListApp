@@ -1,5 +1,5 @@
+/* Author: Yerlinson Maturana */
 moment().locale();
-
 setInterval(() => {
    app.time = moment().format('MMMM Do YYYY');
    app.hours = moment().format('h:mm:ss A');

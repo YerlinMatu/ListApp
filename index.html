@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ListApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Oregano" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <main id="app">
+<div class="navbar-fixed">
+  <nav>
+    <a href="#" class="brand-logo center">
+      ListApp
+    </a>
+    <a href="#" class="profile">
+    <div class="chip" style="margin-left:20px">
+      <img :src="photo" alt="Contact Person">Yerlin Matu
+      </div>
+    </a>
+  </nav>
+</div>
+  <div class="list container animated fadeIn">
+    <div class="row">
+      <div class="col s6">
+        <h4>{{ list.length }} Tareas pendiente</h4>
+              <input type="text" placeholder="Inicia una nueva tarea..." v-model="newItem" @keyup.enter="addList">
+       <button class="btn purple darken-3" @click="addList"><i class="large material-icons">attach_file</i>Agregar</button>
+       <button class="btn green" @click="sortList"><i class="large material-icons">arrow_drop_down</i>Ordenar</button>
+       <button class="btn red" @click="delListAll"><i class="large material-icons">delete_sweep</i>Eliminar</button>
+      </div>
+      <div class="col s6">
+        <h1 class="white-text">{{ hours }}</h1>
+        <h4>{{ time }}</h4>
+      </div>
+      <div/>
+    </div>
+  </div>
+    <div class="collection" v-if="list.length">
+     <ul>
+       <li class="collection-item animated fadeInLeft"  v-for="(item, index) in list" @click="delItem(index)">
+         <div>
+           <strong>{{ index+1 }}. {{ item.homework }}</strong>
+           <span style="color:gray">{{ item.time }}</span>
+           <a href="#!" class="secondary-content"><i style="color:#5c196b" class="material-icons">delete</i></a></div>
+         </li>
+     </ul>
+   </div>
+</main>
+  <script src='https://momentjs.com/downloads/moment-with-locales.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

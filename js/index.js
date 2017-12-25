@@ -15,8 +15,8 @@ const app = new Vue({
     newItem:'', 
     localDB: localStorage,
     list: [],
-    time: '',
-    hours: '',
+    time: '0:00',
+    hours: '0:00',
     photo:'https://pbs.twimg.com/profile_images/914553760017510400/4PvqWeVe.jpg'
   },
   methods: {

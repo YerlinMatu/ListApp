@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col s6">
         <h4>{{ list.length }} Tareas pendiente</h4>
-              <input type="text" placeholder="Inicia una nueva tarea..." v-model="newItem" @keyup.enter="addList">
+       <input type="text" placeholder="Inicia una nueva tarea..." v-model="newItem" @keyup.enter="addList">
        <button class="btn purple darken-3" @click="addList"><i class="large material-icons">attach_file</i>Agregar</button>
        <button class="btn green" @click="sortList"><i class="large material-icons">arrow_drop_down</i>Ordenar</button>
        <button class="btn red" @click="delListAll"><i class="large material-icons">delete_sweep</i>Eliminar</button>
